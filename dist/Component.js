@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/UIComponent","sap/ui/Device","demo5/model/models","sap/ui/model/json/JSONModel"],function(e,t,i,o){"use strict";return e.extend("demo5.Component",{metadata:{manifest:"json"},init:function(){e.prototype.init.apply(this,arguments);this.getRouter().initialize();this.setModel(i.createDeviceModel(),"device");var t=new o([]);this.setModel(t,"tableModel")}})});
+//# sourceMappingURL=Component.js.map

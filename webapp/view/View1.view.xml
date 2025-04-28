@@ -1,0 +1,73 @@
+<mvc:View 
+    controllerName="demo5.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+
+    <Page id="page" title="Inward List">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <HBox justifyContent="SpaceBetween">
+    <!-- Invisible spacer to push the title to the center -->
+    <Text text="" width="50%" />
+
+    <!-- Centered Title -->
+    <Title text="Inward List" level="H2" textAlign="Center" />
+
+    <!-- Button aligned to the right -->
+    <Button text="+ New Inward" type="Emphasized" press="onNewInward" />
+            </HBox>
+
+                <!-- Filter Section -->
+                <HBox class="sapUiSmallMarginTopBottom">
+                    <SearchField id="searchGateInwardNo" placeholder="Search Gate Inward No..." width="200px" search=".onSearch" />
+                    <SearchField id="searchSupplierName" placeholder="Search Supplier Name..." width="200px" search=".onSearch" />
+                    <SearchField id="searchPONumber" placeholder="Search PO No" width="200px" search=".onSearch" />
+                    <!-- <DatePicker id="entryDate" placeholder="Select Entry Date" width="200px" change=".onDateChange" /> -->
+                    <DatePicker  id="entryDate" placeholder="Select Entry Date" width="200px" displayFormat="dd-MM-yyyy" valueFormat="yyyy-MM-ddTHH:mm:ss" change=".onSearch" />
+                    <SearchField id="searchCancelled" placeholder="Search by Cancel" width="200px" search=".onSearch" />
+                </HBox>
+
+                <!-- Table for Inward List -->
+                <Table id="inwardTable" inset="false" items="{ path: 'tableModel>/inwardList'}">
+                    <columns>
+                        <Column>
+                            <Text text="Gate Inward No" />
+                        </Column>
+                        <Column>
+                            <Text text="Supplier Name" />
+                        </Column>
+                        <Column>
+                            <Text text="PO Number" />
+                        </Column>
+                        <Column>
+                            <Text text="Entry Date" />
+                        </Column>
+                        <Column>
+                            <Text text="Cancelled" />
+                        </Column>
+                        <Column>
+                            <Text text="Download PDF" />
+                        </Column>
+                        <Column>
+                            <Text text="View" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{tableModel>GateInwardNo}" />
+                                <Text text="{tableModel>SupplierName}" />
+                                <Text text="{tableModel>PurchaseOrderNo}" />
+                                <Text text="{tableModel>EntryDate}" />
+                                <Text text="{tableModel>Cancelled}" />
+                                <Button text="Download" press=".onDownloadPDF" />
+                                <Button text="View" press=".onViewInward" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

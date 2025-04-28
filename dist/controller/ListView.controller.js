@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],function(e){"use strict";return e.extend("demo5.controller.ListView",{onInit:function(){},onListItemPress:function(e){var t=e.getSource().getBindingContext("tableModel").getObject();var n=this.getView().getModel("tableModel");this.getOwnerComponent().setModel(n,"tableModel");this.getOwnerComponent().getRouter().navTo("ViewInwardData",{inwardId:t.GateInwardNo})}})});
+//# sourceMappingURL=ListView.controller.js.map

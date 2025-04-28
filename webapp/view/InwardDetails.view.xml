@@ -1,0 +1,190 @@
+
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns="sap.m"
+  xmlns:layout="sap.ui.layout" 
+  controllerName="demo5.controller.InwardDetails">
+
+
+  <Page showNavButton="true" navButtonPress="onNavBack">
+    <customHeader>
+        <Toolbar>
+            <ToolbarSpacer/>
+            <Title text="Inward Details" level="H4" titleStyle="H4"/>
+            <ToolbarSpacer/>
+            <Button text="Save" type="Emphasized" press="onSave"/>
+
+        </Toolbar>
+        
+    </customHeader>
+
+           <content>
+      <Panel headerText="Gate Inward">
+        <layout:Grid defaultSpan="L6 M6 S12" hSpacing="1" vSpacing="1" width="100%" class="hboxBorder">
+                <VBox>
+
+                <Label text="" width="70px"/>
+
+        <HBox>
+        <Label text="" width="70px"/>
+        <VBox>
+        <HBox>
+        <Label text="Gate Inward No " width="150px"/>
+        <Input value="{formModel>/GateInwardNo}" width="150px"/>
+       
+        </HBox>
+        <HBox>
+        <Label text="Entry Date " width="150px"/>
+    <DatePicker id="entryDatePicker" value="{formModel>/EntryDate}" 
+    displayFormat="dd-MM-yyyy" 
+    valueFormat="yyyy-MM-dd'T'HH:mm:ss"
+    placeholder="Select Date" />        </HBox>
+
+        <HBox>
+        <Label text="Entry Time " width="150px"/>
+        <Input value="{formModel>/EntryTime}" width="150px"/>
+         </HBox>
+
+        <HBox>
+        <Label text="Plant " width="150px"/>
+        <Input value="{formModel>/Plant}" width="150px"/>
+         </HBox>
+        <HBox>
+        <Label text="Vehicle Number" width="150px"/>
+        <Input value="{formModel>/VehicleNumber}" width="150px"/>
+        </HBox>
+
+        <HBox>
+        <Label text="Vehicle In-Time" width="150px"/>
+        <Input value="{formModel>/VehicleInTime}" width="150px"/>
+        </HBox>
+
+        <HBox>
+        <Label text="Driver Name" width="150px"/>
+        <Input value="{formModel>/DriverName}" width="150px"/>
+        </HBox>
+        <HBox>
+        <Label text="Driver Number" width="150px"/>
+        <Input value="{formModel>/DriverNumber}" width="150px"/>
+        </HBox>
+        </VBox>
+        <Label text="" width="100px"/>
+
+      <VBox>
+
+      <HBox>
+        <Label text="Purchase Order No " width="150px"/>
+        <Input value="{formModel>/PONO}" width="150px"/>
+        </HBox>
+
+        <HBox>
+        <Label text="Supplier Name " width="150px"/>
+        <Input value="{formModel>/SupplierName}" width="150px" />
+        </HBox>
+
+        <HBox>
+        <Label text="Supplier Code " width="150px"/>
+        <Input value="{formModel>/SupplierCode}" width="150px"/>
+        </HBox>
+
+        <HBox>
+        <Label text="Supplier Plant " width="150px"/>
+        <Input value="{formModel>/SupplierPlant}" width="150px"/>
+        </HBox>
+
+        <HBox>
+        <Label text="PO Type " width="150px"/>
+        <Input value="{formModel>/POType}" width="150px"/>
+        </HBox>
+
+        <HBox>
+        <Label text="Invoice No " width="150px"/>
+        <Input value="{formModel>/InvoiceNo}" width="150px"/>
+        </HBox>
+
+        <HBox>
+         <Label text="Invoice Date " width="150px"/>
+        <Input value="{formModel>/InvoiceDate}" width="150px" />
+        </HBox>
+
+      </VBox>
+        <Label text="" width="100px"/>
+
+      <!-- Right Column -->
+      <VBox>
+        <Label text="Other than PO Items" design="Bold" width="200px"/>
+
+        <HBox>
+        <Label text="Type" width="150px"/>
+        <Select selectedKey="{formModel>/Type} " width="150px">
+      <core:Item key="-" text="-" />
+       <core:Item key="Customer" text="Customer" />
+        <core:Item key="Supplier" text="Supplier" />
+
+
+    </Select>         
+    </HBox>
+
+        <HBox>
+        <Label text="Reference No " width="150px"/>
+        <Input value="{formModel>/ReferenceNo}" width="150px" />
+        </HBox>
+
+        <HBox>
+        <Label text="Cancelled ? " width="150px"/>
+      <Select selectedKey="{formModel>/Cancelled} " width="150px">
+      <core:Item key="No" text="No" />
+      <core:Item key="Yes" text="Yes" />
+
+    </Select>         
+    </HBox>
+        <HBox>
+        <Label text="Container Number " width="150px"/>
+        <Input value="{formModel>/ContainerNo}" width="150px" />
+        </HBox>
+
+        <HBox>
+        <Label text="Courier Number " width="150px"/>
+        <Input value="{formModel>/CourierNo}" width="150px" />
+        </HBox>
+
+        <HBox>
+        <Label text="Transporter Name " width="150px"/>
+        <Input value="{formModel>/TransporterName}" width="150px" />
+        </HBox>
+        
+      </VBox>
+</HBox>
+        </VBox>
+
+        </layout:Grid>
+        <layout:Grid defaultSpan="L6 M6 S12" hSpacing="1" vSpacing="1" width="100%" class="hboxBorder">
+        <HBox>
+                <Label text="" width="70px"/>
+
+        <VBox>
+       <Label text="" width="70px"/>
+
+        <HBox>
+        <Label text="Entered By " width="150px"/>
+        <Select selectedKey="{formModel>/EnteredBy} " width="150px">
+      <core:Item key="Raju" text="Raju" />
+      <core:Item key="Somu" text="Somu" />
+
+    </Select> 
+        </HBox>
+         <HBox>
+        <Label text="Remarks " width="150px"/>
+        <Input value="{formModel>/Remarks}" width="300px"/>
+       
+        </HBox>
+        </VBox>
+        </HBox>
+
+       </layout:Grid>
+
+      </Panel>
+    </content>
+      </Page>
+</mvc:View>

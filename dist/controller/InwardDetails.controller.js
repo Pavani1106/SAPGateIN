@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/routing/History"],function(e,o){"use strict";return e.extend("demo5.controller.InwardDetails",{onInit:function(){},onNavBack:function(){var e=o.getInstance();var n=e.getPreviousHash();if(n!==undefined){window.history.go(-1)}else{var t=sap.ui.core.UIComponent.getRouterFor(this);t.navTo("RouteView1",{},true)}}})});
+//# sourceMappingURL=InwardDetails.controller.js.map
